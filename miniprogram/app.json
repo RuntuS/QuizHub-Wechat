@@ -1,6 +1,5 @@
 {
   "pages": [
-    
     "pages/login/login",
     "pages/rep/question/question",
     "pages/rep/folders/folders",
@@ -11,8 +10,8 @@
     "pages/index/index",
     "pages/search/search",
     "pages/rep/folders/issueFinish/issueFinish",
-    "pages/rep/folders/blob/blob"
-    
+    "pages/rep/folders/blob/blob",
+    "pages/rep/folders/blob/onlinePreview/previewType_doc"
   ],
   "window": {
     "navigationStyle": "custom",
