@@ -16,15 +16,17 @@
 <view class="button">
 
   <view  class="download">
-    <button class="bg-gradual-blue cu-btn radius shadow-blur">下载</button>
+    <button class="bg-gradual-blue cu-btn radius shadow-blur" bindtap="downloadFile">下载 ( {{size}} )</button>
   </view >
 
   <view  class="preview">
-    <button class="bg-gradual-green cu-btn radius shadow-blur">在线预览</button>
+    <button class="bg-gradual-green cu-btn radius shadow-blur" bindtap="onlinePreview">在线预览</button>
   </view>
 
   <view class="jiexi" wx:if="{{isDoc}}">
-    <button class="bg-gradual-blue cu-btn radius shadow-blur">解析</button>
+    <button class="bg-gradual-orange cu-btn radius shadow-blur" bindtap="analysisDoc">解析题目</button>
   </view>
+  
+  
 
 </view >
