@@ -1,0 +1,66 @@
+<cu-custom bgColor="bg-gradual-blue"  class="top-bar" isBack="{{true}}">
+  <view slot="backText">题库</view>
+  <view slot="content">做题进行时</view>
+</cu-custom>
+
+<!-- question -> 问题显示 -->
+<view class="mainBox" wx:if="{{!loadAssessment}}">
+  <view class="question">
+    <view>
+    {{issueCount+1}}.{{issue.title}}
+    </view>
+  </view>
+
+  <!-- 答案 -->
+  <view class="answer" wx:if="{{!loadAssessment}}">
+    <view class="answer-A">A. {{issue.choiceA}}</view>
+    <view class="answer-B">B. {{issue.choiceB}}</view>
+    <view class="answer-C">C. {{issue.choiceC}}</view>
+    <view class="answer-D">D. {{issue.choiceD}}</view>
+  </view>
+
+  <view class="choosenAnswer" wx:if="{{!loadAssessment}}">
+    <view class="A {{choosenClass_A}}" data-choosen="A" bindtap="chooseAnswer">A</view>
+    <view class="B {{choosenClass_B}}" data-choosen="B" bindtap="chooseAnswer">B</view>
+    <view class="C {{choosenClass_C}}" data-choosen="C" bindtap="chooseAnswer">C</view>
+    <view class="D {{choosenClass_D}}" data-choosen="D" bindtap="chooseAnswer">D</view>
+  </view>
+
+
+  <view class="next-finish-box" wx:if="{{!loadAssessment}}">
+    <view class="nextAndBack" >
+
+      <view class="backBox" wx:if="{{backButtonDisplay}}">
+        <button class="cu-btn round line-blue back" bindtap="backIssue">Back</button>
+      </view>
+
+
+      <view class="nextBox" wx:if="{{nextButtonDisplay}}">
+        <button class="cu-btn round line-blue next" bindtap="nextIssue">Next</button>
+      </view>
+
+      <view class="finish">
+      <button class="cu-btn round line-orange" bindtap="upload">Finish</button>
+    </view>
+
+    </view>
+  </view> 
+  
+
+
+</view>
+
+
+
+
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/run.gif' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>上传中</view>
+</view>
+
+<view class='cu-load load-modal' wx:if="{{loadAssessment}}">
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/run.gif' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>题目加载中</view>
+</view>

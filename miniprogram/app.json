@@ -1,0 +1,53 @@
+{
+  "pages": [
+    
+    "pages/login/login",
+    "pages/rep/question/question",
+    "pages/rep/folders/folders",
+    "pages/rep/rep",
+    "pages/rep/folders/issue/issue",
+    "pages/home/home",
+    "pages/inf/inf",
+    "pages/index/index",
+    "pages/search/search",
+    "pages/rep/folders/issueFinish/issueFinish",
+    "pages/rep/folders/blob/blob"
+    
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "tabBar": {
+    "color": "#cdcdcd",
+    "selectedColor": "#1296db",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "selectedIconPath": "images/chatclick.png",
+        "iconPath": "images/chatunclick.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "搜索",
+        "selectedIconPath": "images/searchclick.png",
+        "iconPath": "images/searchunclick.png"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "个人主页",
+        "selectedIconPath": "images/personclick.png",
+        "iconPath": "images/personunclick.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

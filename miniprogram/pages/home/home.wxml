@@ -1,0 +1,128 @@
+<view class="home">
+<!-- 头部背景 -->
+    <view class="background-image-box">
+      <image src="https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Quizhub/head-background.jpeg" class="background-image"></image>
+    </view>
+
+
+    <view id="head" >
+    <!-- 头部信息 -->
+      <view class="head-photo-box">
+        <image class="head-photo" src="{{userInf.avatarUrl}}">
+      
+        </image>
+        <text class="name">
+          {{userInf.nickName}}
+        </text>
+      </view>
+      <!-- 自我介绍 -->
+     <view class="self-intro">
+        <view class="intro"><image src="/images/intro.png"></image><text>干就完了,奥力给</text></view>
+        <view class="url"><image src="/images/link.png"></image><text>https://laolan-runtu.xyz</text></view>
+    </view>
+  </view>
+
+  <!-- 头部信息截止 -->
+  <view class="follow">
+
+    <view class="followers pubilc-follow">
+      <view class="followers-top top">
+         <text class="cuIcon-friendfavor text-gray followers-icon icon" style="font-size : 25px;"></text>
+         <text class="fo-text">followers</text>
+      </view>
+      <view class="bottom">
+          <text>20</text> 
+      </view>
+      
+    </view>
+
+    <view class="following pubilc-follow"> 
+        <view class="following-top top">
+          <text class="cuIcon-friendfamous text-gray following-icon icon" style="font-size : 25px;"></text>
+          <text class="fo-text">following</text>
+        </view>
+        <view class="bottom">
+          <text >40</text> 
+        </view>
+    </view>
+
+
+    <view class="config pubilc-follow" bindtap = "turn_to_inf"> 
+      <view class="config-top top" >
+        <text class="cuIcon-messagefill text-gray config-icon icon" style="font-size : 25px;"></text>
+        <text class="fo-text">未读消息</text>
+        
+        <view class="unread"  wx:if="{{unReadNum > 0}}"></view>
+      </view>
+        <view class="bottom" wx:if="{{hasUnread}}">
+          <text >{{unReadNum}}</text> 
+        </view>
+    </view>
+
+  </view>
+
+  <!-- follow结束 -->
+
+  <!-- 仓库开始rep -->
+  <view class="rep-box">
+    <text class="cuIcon-top" style="font-size : 25px; margin-left:30rpx;"></text>
+    <text id="title">Popular</text>
+  <!-- 加载动画 -->
+    <view  wx:if="{{isLoading}}" class="loading" style="position:absolute;width:100%;">
+      <image src="https://image.weilanwl.com/gif/loading-white.gif" mode="aspectFit" class="gif-white" style="height:400rpx"></image>
+    </view>
+  <!-- 这个是可以横向滑动的 -->
+    <view class="rep-slide">
+        <scroll-view scroll-x="true"  id="scroll" >
+            <view class="rep" wx:for="{{requestResult}}"  bindtap="turnToRep" data-rep="{{item}}" >
+
+                <view class="headphoto-and-name">
+                  <view class="headphoto-box">
+                    <image src="{{userInf.avatarUrl}}"></image>
+                  </view>
+                  <text class="intro-name">{{userInf.nickName}}</text>
+                </view>
+
+
+                <view class="rep-title">
+                  <text>{{item.repoNickName}}</text>
+                </view>
+
+                <view class="rep-intro">
+                  <text>{{item.repoIntro}}。</text>
+                </view>
+
+
+                <view class="tag-class">
+                    <!-- 后期再来处理不同类别颜色不同的问题 --> 
+                    <view class="color bg-gradual-blue"></view> <text>{{item.tagName}}</text>
+                </view>
+
+                <view class="some-icons">
+                    <view class="star">
+                      <image src="/images/star.png"></image><text>{{item.starNum}}</text>
+                    </view>
+                    <view class="fork">
+                      <image src="/images/fork.png"></image><text>{{item.forkNum}}</text>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <!-- 横向滑动样式结束 -->
+    
+    <!-- 仓库预览跳转 -->
+    <view class="to-rep ">
+      <text>Repositories</text>
+      <image src="/images/book.png" class="to-stars-icon"></image>
+      <image src="/images/right.png"></image>
+    </view>
+    <!-- stars跳转 -->
+    <view class="to-stars" id="stars">
+      <text>stars</text>
+      <image src="/images/star2.svg" class="to-stars-icon"></image>
+      <image src="/images/right.png"></image>
+    </view>
+
+  </view>
+</view>

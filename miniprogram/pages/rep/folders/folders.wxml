@@ -1,0 +1,35 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}" class="top-bar" >
+  <view slot="backText">{{repName}}</view>
+  <view slot="content">Folders</view>
+</cu-custom>
+
+
+<!-- 第一个 -->
+<view style="background-color:white;" wx:if="{{loadingOver}}" >
+  <view class="to-somewhere"  bindtap="turnToIssueOrFolders" data-folderinf="{{firstfold}}" wx:if="{{foldersNum > 1}}">
+      <text data-folderinf="{{firstfold}}">{{firstfold.filename}}</text>
+      <image src="{{firstfold.imageUrl}}" class="to-stars-icon" data-folderinf="{{firstfold}}"></image>
+      <image src="/images/right.png" data-folderinf="{{firstfold}}"></image>
+  </view>
+
+
+  <view wx:for="{{requestFolders}}" class="to-somewhere" bindtap="turnToIssueOrFolders" data-folderinf="{{item}}">
+    <text data-folderinf="{{item}}">{{item.filename}}</text>
+    <image src="{{item.imageUrl}}" class="to-stars-icon" data-folderinf="{{item}}"></image>
+    <image src="/images/right.png" data-folderinf="{{item}}"></image>
+  </view>
+
+
+<!-- 最后一个 -->
+  <view class="to-somewhere" id="issue" bindtap="turnToIssueOrFolders" data-folderinf="{{endFold}}" wx:if="{{loadingOver}}" >
+        <text data-folderinf="{{endFold}}">{{endFold.filename}}</text>
+        <image src="{{endFold.imageUrl}}" class="to-stars-icon" data-folderinf="{{endFold}}"></image>
+        <image src="/images/right.png" data-folderinf="{{endFold}}"></image>
+  </view>
+</view>
+
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/run.gif' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>加载中</view>
+</view>

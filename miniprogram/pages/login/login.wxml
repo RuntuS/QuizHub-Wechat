@@ -1,0 +1,28 @@
+<view class="bg-gradual-blue login-page" style="height:{{height}}px">
+  <view class="login-box">
+
+    <view class="text-box">
+      <text>Quizhub</text>
+    </view>
+
+    <view class="act-psw">
+      <view class="act">
+        <input type="txt" placeholder="账号" bindinput="account"></input>
+      </view>
+
+      <view class="psw">
+        <input type="password" placeholder="密码" bindinput="password"></input>
+      </view>
+    </view>
+
+
+    <view class="btn-box signin">
+      <button class="bg-white cu-btn round lg" bindgetuserinfo="login" open-type="getUserInfo">登录</button>
+    </view>
+    <view class="btn-box signup">
+      <button class="bg-black cu-btn round lg" >注册</button>
+    </view>
+  </view>
+</view>
+
+

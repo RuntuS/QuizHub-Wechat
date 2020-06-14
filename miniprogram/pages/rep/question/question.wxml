@@ -1,0 +1,39 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}" class="top-bar" >
+  <view slot="backText">{{repName}}</view>
+  <view slot="content">题库</view>
+</cu-custom>
+
+<view class="top"  wx:if="{{!loadModal}}">
+  <view class="text">
+      习题预览
+  </view>
+  <view class="change bg-gradual-blue "><image src="/images/upload.png" class="image"></image></view>
+  <view class="create bg-gradual-blue " ><image src="/images/add.png" class="image"></image></view>
+</view>
+
+<view class="main-content"  wx:if="{{!loadModal}}">
+  
+  <view class="every-question-box bg-gradual-green  radius  shadow" wx:for="{{assessmentArr}}" bindtap="trunToIssue"   data-id="{{item.assessmentId}}">
+    <view class="title" data-id="{{item.assessmentId}}">
+      {{item.assessmentName}}
+    </view>
+
+    <view class="intro" data-id="{{item.assessmentId}}">
+      {{item.assessmentIntro}}
+    </view>
+
+
+    <view class="tag" data-id="{{item.assessmentId}}">
+      <view>
+         {{item.assessmentTag}}
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/run.gif' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>加载中</view>
+</view>

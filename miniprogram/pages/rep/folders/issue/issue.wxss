@@ -1,0 +1,117 @@
+/* miniprogram/pages/rep/folders/issue/issue.wxss */
+.mainBox{
+  overflow: hidden;
+}
+
+
+.question > view{
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+
+.answer{
+  width: 90%;
+  margin: 0 auto;
+}
+
+
+.answer > view{
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 30rpx;
+}
+
+.choosenAnswer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 100rpx;
+}
+
+.choosenAnswer > view{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+
+.A{
+  
+}
+
+.B{
+ 
+}
+
+.C{
+
+}
+
+.D{
+
+}
+
+
+.next-finish-box{
+  position: relative;
+  height: 200rpx;
+  margin-top: 100rpx;
+}
+
+
+
+.nextAndBack{
+  position: absolute;
+  right: 20rpx;
+  top: 10rpx;
+  border: 1px solid black;
+}
+
+.nextAndBack > view{
+  width: 200rpx;
+}
+
+.nextAndBack > view > button{
+  width: 100%;
+}
+
+.backBox{
+  position: absolute;
+  right: 230rpx;
+}
+
+.nextBox{
+  position: absolute;
+  right: 20rpx;
+}
+
+
+
+.finish{
+  position: absolute;
+  right: 20rpx;
+  top: 100rpx;
+  width: 200rpx;
+}
+
+
+.finish > button{
+  width: 100%;
+}
+
+.noChoosenAnswer{
+  background-color: rgb(200, 200, 200,0.8);
+  color: black;
+}
+
+
+.hasChoosenAnswer{
+  background-color: #53CAF8;
+  color: white;
+}

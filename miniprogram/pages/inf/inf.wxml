@@ -1,0 +1,28 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}" class="top-bar" >
+  <view slot="backText">返回</view>
+  <view slot="content">信息</view>
+</cu-custom>
+
+
+<view wx:for="{{dataList}}" class="every-box">
+  
+  <view class="imageBox">
+    <image src="{{avatorUrl}}"></image>
+    <text>{{item.visitorId}}</text>
+  </view>
+
+  <view class="main-message">
+    {{item.visitorId}}{{item.message}}{{item.resourceId}}。
+  </view>
+  <view class="time"> 
+    {{item.date}}
+  </view>
+
+</view>
+
+
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/run.gif' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>加载中</view>
+</view>

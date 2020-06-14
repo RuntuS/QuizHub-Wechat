@@ -1,0 +1,61 @@
+/* miniprogram/pages/rep/folders/blob/blob.wxss */
+
+.button{
+  margin-top: 100rpx;
+}
+
+
+
+.download, .preview , .jiexi{
+  display: flex;
+  justify-content: center;
+}
+
+.preview{
+  margin-top: 50rpx;
+}
+
+.intro{
+  margin-top: 300rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.jiexi{
+  margin-top: 50rpx;
+}
+
+
+.image-box{
+  width: 200rpx;
+  height: 200rpx;
+  
+}
+
+.image-box > image{
+  width: 100%;
+  height: 100%;
+}
+
+.title-text{
+  margin-top: 20rpx;
+}
+
+.title-text > text{
+  font-size: 40rpx;
+}
+
+.title-text{
+  margin-top: 40rpx;
+  margin-bottom: 20rpx;
+}
+.intro-text{
+  width: 60%;
+  margin: 0rpx auto;
+  white-space: pre-wrap;
+}
+
+
+
+

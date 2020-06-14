@@ -1,0 +1,100 @@
+
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}" class="top-bar" >
+  <view slot="backText">{{userInfo.userName}}</view>
+  <view slot="content">{{repNickName}}</view>
+</cu-custom>
+
+<view class="top" wx:if="{{!loadModal}}">
+  <view class="head-and-name">
+    <view class="image-box">
+      <image src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <text>{{userInfo.nickName}}</text>
+  </view>
+
+
+  <view class="title-and-intro" wx:if="{{!loadModal}}">
+    <view class="rep-title">
+      {{repNickName}}  <!--后期替换变量{{repName}}-->
+    </view> 
+    <view class="rep-intro">
+      {{repIntro}}
+    </view> 
+  </view>
+
+  <!-- <view class="public-private">
+    
+    <view class="private" wx:if>
+    
+    </view>
+  </view> -->
+
+  <view class="star-and-fork" wx:if="{{!loadModal}}">
+    <view class="star">
+      <image src="/images/star.png"></image><text> {{starNum}} Stars</text>
+    </view>
+    <view class="fork">
+      <image src="/images/fork.png"></image><text>{{forkNum}} Forks</text>
+    </view>
+  </view>
+
+  <view class="button-for-star" wx:if="{{!loadModal}}">
+    <view class="margin-tb-sm text-center">
+      <button class="cu-btn  {{star_style.styleClass}} {{shadowClassStar}} btn"  bindtap="starCommit"><text class="cuIcon-appreciatefill"></text>{{star_style.font}}</button>
+    </view>
+    <view class="margin-tb-sm text-center" >
+      <button class="cu-btn  {{fork_style.styleClass}} {{shadowClassFork}} btn"  bindtap="forkCommit" ><text class="cuIcon-fork"></text> {{fork_style.font}}</button>
+    </view> 
+  </view>
+
+  <view wx:if="{{!loadModal}}">
+    <view class="to-somewhere" id="issue" >
+      <text>讨论</text>
+      <image src="/images/issue.png" class="to-stars-icon"></image>
+      <!-- <text id="number_1">20</text> -->
+      <image src="/images/right.png"></image>
+    </view>
+
+    <view class="to-somewhere" id="folder" bindtap="turnToFolder"> 
+      <text>文件</text>
+      <image src="/images/folder.png" class="to-stars-icon"></image>
+      <image src="/images/right.png"></image>
+    </view>
+
+    <view class="to-somewhere" id="followers"> 
+      <text>错题推荐</text>
+      <image src="/images/follow.png" class="to-stars-icon"></image>
+      <!-- <text id="number_2">20</text> -->
+      <image src="/images/right.png"></image>
+    </view>
+  </view>
+</view>
+
+<!-- 题库 -->
+<view class="question-rep" bindtap="turnToIssue" wx:if="{{!loadModal}}">
+  <view class="question-box">
+    <image src="/images/questionRep.png"></image>
+  </view>
+  <view class="question-text">
+    题库
+  </view>
+  <view class="right">
+    <image src="/images/right.png"></image>
+  </view>
+</view>
+
+
+<view class="rep-more-intro" wx:if="{{!loadModal}}">
+  <towxml nodes="{{article}}"/>
+</view>
+
+
+<view class="pay bg-gradual-blue shadow radius" wx:if="{{!loadModal}}">打赏</view>
+<!-- <image src="/images/money.png"></image> -->
+
+
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/run.gif' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>加载中</view>
+</view>

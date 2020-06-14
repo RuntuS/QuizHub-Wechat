@@ -1,0 +1,54 @@
+/* miniprogram/pages/inf/inf.wxss */
+.top-bar{
+  height: 200rpx;
+}
+
+.every-box{
+  border-radius: 20rpx;
+  background-color: white;
+  box-sizing: border-box;
+  width: 95%;
+  height: 200rpx;
+  margin: 30rpx auto;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  box-shadow: 1px 1px 10px rgba(188, 188, 188, 1);
+}
+
+.imageBox{
+  display: flex;
+  flex-direction: column;
+  width: 200rpx;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.imageBox > image{
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 25rpx;
+  box-shadow: 1px 1px 10px rgb(200, 200, 200);
+}
+
+.imageBox > text{
+  display: inline-block;
+  padding-bottom: 20rpx;
+}
+
+.main-message{
+  box-sizing: border-box;
+  width: 450rpx;
+  margin: 0 auto;
+  padding-top: 30rpx;
+  height: 80%;
+}
+
+.time{
+  position: absolute;
+  right: 40rpx;
+  bottom: 10rpx;
+  color: rgb(200, 200, 200);
+}

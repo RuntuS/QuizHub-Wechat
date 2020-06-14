@@ -1,0 +1,22 @@
+<cu-custom bgColor="bg-gradual-blue"  class="top-bar" >
+  <view slot="content">Finish</view>
+</cu-custom>
+
+<view class="text">
+  最终结果
+</view>
+
+<view>
+  <view wx:for="{{result}}" class="result-box {{item.style}} radius shadow">
+    <view class="questionTitle">
+      问题{{index+1}}: {{item.title}}。
+    </view>
+    <view>
+      <view class="answer"> 正确答案{{item.answer}} : {{item.correctAnswer}}</view>
+      <view class="choose"> 你的选择{{item.chooseAnswer}} : {{item.answerDetail}} </view>
+    </view>
+  </view>
+</view>
+
+
+<button class="cu-btn round bg-olive back" role="button"aria-disabled="false" bindtap="turn">返回主页</button>

@@ -1,0 +1,30 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}" class="top-bar" >
+  <view slot="backText"></view>
+  <view slot="content">预览</view>
+</cu-custom>
+
+
+<view class="intro">
+  <view class="image-box">
+    <image src="{{imageUrl}}"></image>
+  </view>
+  <view class="title-text">
+    <text>{{fileName}}</text>
+  </view>
+</view>
+
+<view class="button">
+
+  <view  class="download">
+    <button class="bg-gradual-blue cu-btn radius shadow-blur">下载</button>
+  </view >
+
+  <view  class="preview">
+    <button class="bg-gradual-green cu-btn radius shadow-blur">在线预览</button>
+  </view>
+
+  <view class="jiexi" wx:if="{{isDoc}}">
+    <button class="bg-gradual-blue cu-btn radius shadow-blur">解析</button>
+  </view>
+
+</view >
