@@ -161,6 +161,18 @@ Page({
     console.log(event.target);
   },
 
+
+  turnToRep(event){
+    console.log("event",event.currentTarget.dataset.rep);
+    
+    let String = JSON.stringify(event.currentTarget.dataset.rep);
+    let encode = encodeURIComponent(String);
+    wx.navigateTo({
+      url: `/pages/rep/rep?repInf=${encode}`,
+    })
+  },
+
+
   requestRepInf(that){
     wx.cloud.callFunction({
       name : "index",
