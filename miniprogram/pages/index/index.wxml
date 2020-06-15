@@ -1,7 +1,5 @@
-<cu-custom bgColor="bg-gradual-blue" class="top-bar" >
-  <view slot="content">首页</view>
-</cu-custom>
 
+<cu-custom bgColor="bg-gradual-pink" ><view slot="content">首页</view></cu-custom>
 
 
 <view id="topBar"  wx:if="{{!loadModal}}">
@@ -42,46 +40,62 @@
     </swiper-item>
   </swiper>
 </view>
-
-
-<view class="hot bg-gradual-red radius shadow"  wx:if="{{!loadModal}}">
-  热门仓库
-</view>
-
-
-<view class="content-box bg-gradual-blue radius shadow"  wx:if="{{!loadModal}}">
-  <view wx:for="{{contentArray}}" class="rep shadow">
-    <view class="headphoto-and-name">
-                  <view class="headphoto-box">
-                    <image src="{{userInf.avatarUrl}}"></image>
-                  </view>
-                  <text class="intro-name">{{userInf.nickName}}</text>
-                </view>
-                <view class="rep-title">
-                  <text>{{item.repoNickName}}</text>
-                </view>
-                <view class="rep-intro">
-                  <text>{{item.repoIntro}}。</text>
-                </view>
-                <view class="tag-class">
-                    <!-- 后期再来处理不同类别颜色不同的问题 --> 
-                    <view class="color bg-gradual-blue"></view> <text>{{item.tagName}}</text>
-                </view>
-                <view class="some-icons">
-                    <view class="star">
-                      <image src="/images/star.png"></image><text>{{item.starNum}}</text>
-                    </view>
-                    <view class="fork">
-                      <image src="/images/fork.png"></image><text>{{item.forkNum}}</text>
-                    </view>
-    </view>
+<view class="cu-bar bg-white solid-bottom">
+  <view class='action'>
+    <text class='cuIcon-titles text-orange '></text>热门内容
   </view>
 </view>
 
 
 
-<view class='cu-load load-modal' wx:if="{{loadModal}}">
-  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
-  <image src='https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/run.gif' class='png' mode='aspectFit'></image>
-  <view class='gray-text'>加载中</view>
+
+
+  <view wx:for="{{contentArray}}" class="">
+    <view >
+
+<!--目前这个跳转还有问题-->
+
+<view class="cu-timeline" bindtap="turnToRep">
+  <view class="cu-time">{{item.tagName}}</view>
+  
+<view class="cu-item">
+    <view class="content">
+      <view class="cu-capsule radius">
+        <view class="cu-tag bg-cyan">{{item.repoNickName}}</view>
+        <view class="cu-tag line-cyan">
+        
+       <view class="star-and-fork" wx:if="{{!loadModal}}">
+    <view class="star">
+      <image src="/images/star.png"></image><text> {{item.starNum}} </text>
+      <image src="/images/fork.png"></image><text>{{item.forkNum}} </text>
+    </view>
+
+  </view>
+        
+        
+        
+        </view>
+      </view>
+      <view class="margin-top">
+      {{item.repoIntro}}
+      </view>
+
+
+  </view>
+ 
+  </view>
 </view>
+
+
+
+
+
+
+</view>
+</view>
+  
+
+
+
+
+
