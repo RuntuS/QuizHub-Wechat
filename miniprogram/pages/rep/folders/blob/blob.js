@@ -17,9 +17,9 @@ Page({
     size : "",
     fileUrl : "",
     size : "",
-    fileType : ""
+    fileType : "",
+    analyFileName : ""
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -39,7 +39,7 @@ Page({
 
   },
 
-  // 解析题目的按钮
+  // 解析题目
   analysisDoc(){
     wx.showLoading({
       title: '解析中',
@@ -50,7 +50,7 @@ Page({
      name : "rep",
      data : {
        $url : "analysisDoc",
-       assessmentName : Math.ceil(Math.random()*100) + '.doc',
+       assessmentName : that.data.analyFileName,
        owner : "QuizHub",
        filePath : that.data.path,
        repName : that.data.repName
@@ -231,5 +231,44 @@ Page({
     })
 
 
+  },
+
+  showModal(e) {
+    this.setData({
+      modalName: e.currentTarget.dataset.target
+    })
+  },
+  hideModal(e) {
+    this.setData({
+      modalName: null
+    })
+  },
+  // 取消
+  cancel(){
+    this.hideModal();
+  },
+  // 确定
+  confirm(){
+    this.hideModal();
+    this.analysisDoc();
+  },
+
+  ChooseCheckbox(e) {
+    let items = this.data.checkbox;
+    let values = e.currentTarget.dataset.value;
+    for (let i = 0, lenI = items.length; i < lenI; ++i) {
+      if (items[i].value == values) {
+        items[i].checked = !items[i].checked;
+        break
+      }
+    }
+    this.setData({
+      checkbox: items
+    })
+  },
+  refreshValue(event){
+    this.setData({
+      analyFileName : event.detail.value
+    })
   }
 })

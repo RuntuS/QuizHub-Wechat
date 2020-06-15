@@ -24,9 +24,32 @@
   </view>
 
   <view class="jiexi" wx:if="{{isDoc}}">
-    <button class="bg-gradual-orange cu-btn radius shadow-blur" bindtap="analysisDoc">解析题目</button>
+    <button class="bg-gradual-orange cu-btn radius shadow-blur" bindtap="showModal" data-target="DialogModal1">解析题目</button>
   </view>
   
   
 
 </view >
+
+
+
+
+<view class="cu-modal {{modalName=='DialogModal1'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">Modal标题</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      <input placeholder="输入解析文件名称" bindinput="refreshValue"></input>
+    </view>
+    <view class="cu-bar bg-white justify-end">
+      <view class="action">
+        <button class="cu-btn line-green text-green" bindtap="cancel" style="width:150rpx;margin-right : 20rpx">取消</button>
+        <button class="cu-btn bg-green margin-left" style="width:150rpx" bindtap="confirm">确定</button>
+      </view>
+    </view>
+  </view>
+</view>

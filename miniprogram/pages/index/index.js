@@ -22,31 +22,31 @@ Page({
     swiperList: [{
       id: 0,
       type: 'image',
-      url: 'https://photo-1258955954.cos.ap-chengdu.myqcloud.com/%E5%8D%9A%E5%AE%A2%E8%AE%BE%E7%BD%AE%E5%9B%BE%E7%89%87/background.jpg'
+      url: 'https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/1.jpg'
     }, {
       id: 1,
         type: 'image',
-        url: 'https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/pixiv15.jpg',
+        url: 'https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/2.jpg',
     }, {
       id: 2,
       type: 'image',
-      url: 'https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/pixiv16.jpg'
+      url: 'https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/3.jpg'
     }, {
       id: 3,
       type: 'image',
-      url: 'https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/pixiv15.jpg'
+      url: 'https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/1.jpg'
     }, {
       id: 4,
       type: 'image',
-      url: 'https://photo-1258955954.cos.ap-chengdu.myqcloud.com/%E5%8D%9A%E5%AE%A2%E8%AE%BE%E7%BD%AE%E5%9B%BE%E7%89%87/background.jpg'
+      url: 'https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/2.jpg'
     }, {
       id: 5,
       type: 'image',
-      url: 'https://photo-1258955954.cos.ap-chengdu.myqcloud.com/%E5%8D%9A%E5%AE%A2%E8%AE%BE%E7%BD%AE%E5%9B%BE%E7%89%87/background.jpg'
+      url: 'https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/3.jpg'
     }, {
       id: 6,
       type: 'image',
-      url: 'https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/pixiv13.jpg'
+      url: 'https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/2.jpg'
     }],
     cardCur: 0,
     contentArray : [],
