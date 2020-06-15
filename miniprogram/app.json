@@ -10,8 +10,7 @@
     "pages/index/index",
     "pages/search/search",
     "pages/rep/folders/issueFinish/issueFinish",
-    "pages/rep/folders/blob/blob",
-    "pages/rep/folders/blob/onlinePreview/previewType_doc"
+    "pages/rep/folders/blob/blob"
   ],
   "window": {
     "navigationStyle": "custom",

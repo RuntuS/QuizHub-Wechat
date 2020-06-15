@@ -63,6 +63,21 @@ exports.main = async (event, context) => {
 
   })
 
+  // 请求文件信息
+  app.router("requestBlob",async (ctx) => {
+    await axios({
+      method : "get",
+      url : `http://182.92.178.28:9999/repos/${ctx._req.event.owner}/${ctx._req.event.repName}/files/blob/master/${ctx._req.event.path}`,
+    }).then(res => {
+      ctx.body = res.data;
+    }).catch(err => {
+      result = {"status" : "failure" , "inf" : "查看目录失败"};
+      ctx.body = result;
+    })
+
+
+  })
+
   // 多级目录请求
   app.router("requestTree",async (ctx) => {
     await axios({
@@ -75,7 +90,18 @@ exports.main = async (event, context) => {
       ctx.body = result;
     })
 
+  })
 
+  // word解析请求
+
+  app.router("analysisDoc",async (ctx) => {
+    await axios({
+      method : "post",
+      url : `http://182.92.178.28:8877/anaylsis`,
+      data : {
+        
+      }
+    })
   })
 
   // 请求问题总揽
