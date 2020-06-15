@@ -1,3 +1,11 @@
 <cu-custom bgColor="bg-gradual-blue" class="top-bar" >
   <view slot="content">首页</view>
 </cu-custom>
+
+
+<!-- 头部背景 -->
+    <view class="background-image-box">
+      <image src="https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Quizhub/head-background.jpeg" class="background-image"></image>
+    </view>
+
+
