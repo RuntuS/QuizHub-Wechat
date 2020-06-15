@@ -34,7 +34,7 @@
       },
       {
         "pagePath": "pages/search/search",
-        "text": "搜索",
+        "text": "发现",
         "selectedIconPath": "images/searchclick.png",
         "iconPath": "images/searchunclick.png"
       },

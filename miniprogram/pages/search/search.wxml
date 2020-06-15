@@ -1,3 +1,36 @@
-<cu-custom bgColor="bg-gradual-blue" class="top-bar" >
-  <view slot="content">搜索</view>
-</cu-custom>
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}"><view slot="content">发现</view></cu-custom>
+<view class="cu-bar bg-white solid-bottom">
+  <view class='action'>
+    <text class='cuIcon-titles text-orange '></text> QuizHub为您推荐
+  </view>
+</view>
+<view class="cu-card case {{isCard?'no-card':''}}">
+  <view class="cu-item shadow pics">
+    <view class="image">
+      <image src="https://pic.imlehr.com/uploads/import/qh1-01.jpeg" mode="widthFix"></image>
+      <view class="cu-bar bg-shadeBottom">
+        <text class="text-cut texty">每日推荐</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="cu-card case {{isCard?'no-card':''}}">
+  <view class="cu-item shadow pics">
+    <view class="image">
+      <image src="https://pic.imlehr.com/uploads/import/qh2-01.jpeg" mode="widthFix"></image>
+      <view class="cu-bar bg-shadeBottom">
+        <text class="text-cut texty">套题精选</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="cu-card case {{isCard?'no-card':''}}">
+  <view class="cu-item shadow pics">
+    <view class="image">
+      <image src="https://pic.imlehr.com/uploads/import/qh4-01.jpeg" mode="widthFix"></image>
+      <view class="cu-bar bg-shadeBottom">
+        <text class="text-cut texty">优质资料</text>
+      </view>
+    </view>
+  </view>
+</view>
