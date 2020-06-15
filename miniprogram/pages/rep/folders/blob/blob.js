@@ -41,8 +41,48 @@ Page({
 
   // 解析题目的按钮
   analysisDoc(){
-   // 这里补充一下，主要就是用调用xxx:8877/anaylsis那个接口，post方式，把文件的path属性传过去，
-   //然后这里需要等待返回值，因为这个是有可能失败的，失败了直接把errMsg作为弹窗给用户看
+    wx.showLoading({
+      title: '解析中',
+    })
+  var that = this;
+  let encode = encodeURI(that.data.path);
+   wx.cloud.callFunction({
+     name : "rep",
+     data : {
+       $url : "analysisDoc",
+       assessmentName : that.data.fileName,
+       owner : "QuizHub",
+       filePath : that.data.path,
+       repName : that.data.repName
+     }
+   }).then(res => {
+    wx.hideLoading();
+     console.log("解析结果: ",res);
+     let result = res.result;
+     if(result.status === 'fail'){
+       wx.showToast({
+         title: '解析失败',
+         image : "/images/error.png",
+         duration : 1000
+       })
+     }
+     else{
+      wx.showToast({
+        title: '解析成功',
+        icon : "success",
+        duration : 1000
+      })
+     }
+    
+   }).catch(err => {
+    wx.hideLoading();
+     console.log("解析发生错误： ", err);
+     wx.showToast({
+      title: '解析失败',
+      image : "/images/error.png",
+      duration : 1000
+    })
+   })
   },
 
   requestBlobInf(that){
@@ -71,10 +111,32 @@ Page({
 
   // 下载的按钮
   downloadFile(){
-    let blob = {};
-    lob.filePath = `${wx.env.USER_DATA_PATH}/`+this.data.fileName;
+    wx.showLoading({
+      title: '下载中',
+    })
+    let blob = new Object();
+    blob.filePath = `${wx.env.USER_DATA_PATH}/`+this.data.fileName;
     console.log(blob.filePath);
     blob.data = wx.base64ToArrayBuffer(this.data.content);
+    blob.success = (res) => {
+      wx.hideLoading();
+      wx.showToast({
+        title: `成功`,
+        icon : "success",
+        duration : 2000
+      })
+      console.log(res)
+      // wx.saveFile({
+      //   tempFilePath: blob.filePath,
+      //   success(res){
+      //     console.log(res.savedFilePath);
+      //   },fail(err){
+      //     console.log("失败了: ",err);
+      //     console.log(blob);
+      //   }
+      // })
+    };
+    blob.fail = (err) => {console.log("出现错误: ",err)}
     wx.getFileSystemManager().writeFile(blob)
   },
 
