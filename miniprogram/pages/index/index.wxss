@@ -1,1 +1,262 @@
 /* miniprogram/pages/index/index.wxss */
+/* miniprogram/pages/index/index.wxss */
+
+/* 顶部 topbar */
+#topBar{
+  box-shadow: 1px 1px 10px rgb(200, 200, 200);
+  height: 80rpx;
+  position: relative;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.headPhoto{
+  width: 75rpx;
+  height: 75rpx;
+  overflow: hidden;
+}
+
+.headPhoto > image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+#GPS{
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 10rpx;
+}
+.location{
+  font-size: 30px;
+}
+.place{
+  font-size: 30rpx;
+}
+
+
+
+
+.search{
+  background-color: white;
+  position: relative;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 20rpx;
+ 
+  margin-bottom: 20rpx;
+}
+
+.search > .text{
+  background-color: rgb(244, 244, 244);
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  width: 50rpx;
+  border-top-left-radius: 20rpx;
+  border-bottom-left-radius: 20rpx;
+  padding-left: 10rpx;
+}
+
+.search > input{
+  background-color: rgb(244, 244, 244);
+  border-bottom-right-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  /* box-shadow: 1px 1px 10px rgb(200, 200, 200); */
+  width: 70%;
+  height: 50rpx;
+}
+
+.message{
+  position: absolute;
+  right: 90rpx;
+  top: 50rpx;
+  transform: translateY(-50%);
+  
+}
+.message > text{
+  font-size: 25px;
+}
+
+.plus{
+  position: absolute;
+  right: 10rpx;
+  top: 50rpx;
+  transform: translateY(-50%);
+}
+
+.plus > text{
+  font-size: 25px;
+}
+
+.blocks{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100rpx;
+  background-color: white;
+  box-shadow: 1px 1px 10px rgb(200, 200, 200);
+
+}
+
+.block{
+  width: 150rpx;
+  height: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.adver{
+  box-shadow: 1px 1px 10px rgb(200, 200, 200);
+  width: 100%;
+  height: 450rpx;
+  margin: 0 auto;
+  background-color: white;
+  margin-top: 30rpx;
+}
+
+
+.image{
+  height: 100%;
+  width: 100%;
+}
+
+.hot{
+  width: 50%;
+  margin: 0 auto;
+  font-size: 40rpx;
+  font-weight: 400;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50rpx;
+}
+
+
+.rep{
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  height: 400rpx;
+  width: 500rpx;
+  /* border: 1px solid black; */
+  margin-top: 50rpx;
+  border-radius: 10rpx;
+  box-shadow: 1px 2px 7px #D6D8DA;
+  border: 1px solid #BEBFBD;
+  position: relative;
+  
+}
+
+.headphoto-and-name{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.headphoto-box{
+  width: 75rpx;
+  height: 75rpx;
+  border-radius: 37.5rpx;
+  margin-left: 10rpx;
+  overflow:hidden;
+  
+}
+
+
+.intro-name{
+  margin-left: 20rpx;
+
+}
+
+.headphoto-box > image{
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+/* 仓库盒子 */
+.rep-title{
+  margin-top: 25rpx;
+  margin-left: 10rpx;
+  font-size: 20px;
+  font-weight: 400;
+  white-space: pre-line;
+}
+
+.rep-intro{
+  margin-top: 25rpx;
+  margin-left: 20rpx;
+  display: flex;
+  align-items: center;
+  white-space: pre-line;
+}
+
+/* icon布局 */
+.some-icons{
+  display: flex;
+  position: absolute;
+  bottom: 10rpx;
+  right: 10rpx;
+  
+}
+
+.star{
+  margin-right: 20rpx;
+}
+
+
+.star > image{
+  width: 35rpx;
+  height: 35rpx;
+  vertical-align: middle;
+}
+
+.star > text{
+  vertical-align: middle;
+}
+
+.fork > image{
+  width: 35rpx;
+  height: 35rpx;
+  vertical-align: middle;
+}
+
+.fork > text{
+  vertical-align: middle;
+}
+
+.content-box{
+  box-sizing: border-box;
+  padding-bottom: 100rpx;
+  margin: 50rpx auto;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.tag-class{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  bottom: 10rpx;
+  left: 20rpx;
+}
+
+.tag-class > .color{
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 10rpx;
+  margin-right: 10rpx;
+}

@@ -75,29 +75,22 @@
     <view class="rep-slide">
         <scroll-view scroll-x="true"  id="scroll" >
             <view class="rep" wx:for="{{requestResult}}"  bindtap="turnToRep" data-rep="{{item}}" >
-
                 <view class="headphoto-and-name">
                   <view class="headphoto-box">
                     <image src="{{userInf.avatarUrl}}"></image>
                   </view>
                   <text class="intro-name">{{userInf.nickName}}</text>
                 </view>
-
-
                 <view class="rep-title">
                   <text>{{item.repoNickName}}</text>
                 </view>
-
                 <view class="rep-intro">
                   <text>{{item.repoIntro}}。</text>
                 </view>
-
-
                 <view class="tag-class">
                     <!-- 后期再来处理不同类别颜色不同的问题 --> 
                     <view class="color bg-gradual-blue"></view> <text>{{item.tagName}}</text>
                 </view>
-
                 <view class="some-icons">
                     <view class="star">
                       <image src="/images/star.png"></image><text>{{item.starNum}}</text>
