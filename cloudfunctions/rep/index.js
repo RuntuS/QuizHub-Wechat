@@ -97,10 +97,17 @@ exports.main = async (event, context) => {
   app.router("analysisDoc",async (ctx) => {
     await axios({
       method : "post",
-      url : `http://182.92.178.28:8877/anaylsis`,
+      url : `http://182.92.178.28:8877/anaylsis/`,
       data : {
-        
+        assessmentName : ctx._req.event.assessmentName,
+        filePath : ctx._req.event.filePath,
+        owner : ctx._req.event.owner,
+        repoName : ctx._req.event.repName
       }
+    }).then(res => {
+      ctx.body = res.data;
+    }).catch(err => {
+      ctx.body = {"status": "fail", "err":err};
     })
   })
 
