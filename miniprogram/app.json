@@ -47,5 +47,10 @@
     ]
   },
   "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "style": "v2",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置将会在顶部显示"
+    }
+  }
 }

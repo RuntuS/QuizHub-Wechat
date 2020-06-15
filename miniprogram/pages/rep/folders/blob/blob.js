@@ -50,7 +50,7 @@ Page({
      name : "rep",
      data : {
        $url : "analysisDoc",
-       assessmentName : that.data.fileName,
+       assessmentName : Math.ceil(Math.random()*100) + '.doc',
        owner : "QuizHub",
        filePath : that.data.path,
        repName : that.data.repName
