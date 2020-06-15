@@ -22,7 +22,7 @@ Page({
     swiperList: [{
       id: 0,
       type: 'image',
-      url: 'https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/1.jpg'
+      url: 'https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/4.jpg'
     }, {
       id: 1,
         type: 'image',
@@ -34,7 +34,7 @@ Page({
     }, {
       id: 3,
       type: 'image',
-      url: 'https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/1.jpg'
+      url: 'https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/4.jpg'
     }, {
       id: 4,
       type: 'image',
