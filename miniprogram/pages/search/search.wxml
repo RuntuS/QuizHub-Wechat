@@ -7,7 +7,7 @@
 <view class="cu-card case {{isCard?'no-card':''}}">
   <view class="cu-item shadow pics">
     <view class="image">
-      <image src="https://pic.imlehr.com/uploads/import/qh1-01.jpeg" mode="widthFix"></image>
+      <image src="https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/search3.jpg" mode="widthFix"></image>
       <view class="cu-bar bg-shadeBottom">
         <text class="text-cut texty">每日推荐</text>
       </view>
@@ -17,7 +17,7 @@
 <view class="cu-card case {{isCard?'no-card':''}}">
   <view class="cu-item shadow pics">
     <view class="image">
-      <image src="https://pic.imlehr.com/uploads/import/qh2-01.jpeg" mode="widthFix"></image>
+      <image src="https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/search1.jpg" mode="widthFix"></image>
       <view class="cu-bar bg-shadeBottom">
         <text class="text-cut texty">套题精选</text>
       </view>
@@ -27,7 +27,7 @@
 <view class="cu-card case {{isCard?'no-card':''}}">
   <view class="cu-item shadow pics">
     <view class="image">
-      <image src="https://pic.imlehr.com/uploads/import/qh4-01.jpeg" mode="widthFix"></image>
+      <image src="https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/search2.jpg" mode="widthFix"></image>
       <view class="cu-bar bg-shadeBottom">
         <text class="text-cut texty">优质资料</text>
       </view>

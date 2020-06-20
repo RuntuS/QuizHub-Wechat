@@ -49,13 +49,12 @@
 
 
 
-
   <view wx:for="{{contentArray}}" class="">
     <view >
 
 <!--目前这个跳转还有问题-->
 
-<view class="cu-timeline" bindtap="turnToRep">
+<view class="cu-timeline" bindtap="turnToRep" data-rep="{{item}}">
   <view class="cu-time">{{item.tagName}}</view>
   
 <view class="cu-item">
