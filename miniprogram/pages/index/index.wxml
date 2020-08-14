@@ -3,13 +3,15 @@
 
 
 <view id="topBar"  wx:if="{{!loadModal}}">
-  <view class="headPhoto">
+  <view class="headPhoto" wx:if="{{isAuthorized}}">
     <image src="{{userInfoAva}}"></image>
   </view>
-  <view id="GPS">
+  <view id="GPS" wx:if="{{isAuthorized}}">
     <text class="cuIcon-location sm text-gray location" ></text>
     <text class="place">{{location}}</text>
   </view>
+  <!-- 没认证 -->
+  <view wx:if="{{!isAuthorized}}" id="GPS" style="">请前往个人主页进行认证</view>
 
   
 </view>

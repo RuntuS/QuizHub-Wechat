@@ -12,7 +12,9 @@ Page({
     ],
     isLoading : false,
     hasUnread : true,
-    unReadNum : 0
+    unReadNum : 0,
+    isAuthorized : app.globalData.isAuthorized,
+    avatarUrl : "https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/default.jpg"
   },
 
   /**
@@ -23,7 +25,7 @@ Page({
     var that = this;
     
     this.setData({
-      userInf : app.globalData.userInfo,
+      // userInf : app.globalData.userInfo,
       isLoading: true
     });
 
@@ -41,6 +43,8 @@ Page({
 
   // 跳转回来就会加载一次
   onShow: function(){
+  if(this.data.isAuthorized)
+  {
     this.unreadNum(this);
     var that = this;
     wx.cloud.callFunction({
@@ -55,13 +59,23 @@ Page({
         isLoading : false
       })
     })
+  } 
   },
 
 
   turn_to_inf(){
-    wx.navigateTo({
-      url: '/pages/inf/inf',
-    })
+    if(this.data.isAuthorized)
+    {
+      wx.navigateTo({
+        url: '/pages/inf/inf',
+      })
+    }else{
+      wx.showToast({
+        title: '请先进行登录',
+        image : "/images/error.png"
+      })
+    }
+    
   },
 
   turnToRep(event){
@@ -87,5 +101,27 @@ Page({
         unReadNum : result
       })
     })
+  },
+
+  login(event){
+    var that = this;
+    wx.showModal({
+      title: '登录授权',
+      content: '是否允许使用您的微信账号登录',
+      success (res) {
+        if (res.confirm) {
+          that.setData({
+            isAuthorized : true,
+            userInf : event.detail.userInfo,
+            avatarUrl : event.detail.userInfo.avatarUrl
+          })
+          app.globalData.userInfo = event.detail.userInfo;
+          app.globalData.isAuthorized = true;
+          that.onShow();
+        } else if (res.cancel) {
+          
+        }
+      }
+    }) 
   }
 })

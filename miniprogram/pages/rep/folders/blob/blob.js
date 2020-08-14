@@ -61,7 +61,7 @@ Page({
      let result = res.result;
      if(result.status === 'fail'){
        wx.showToast({
-         title: '解析失败',
+         title: '文件格式错误',
          image : "/images/error.png",
          duration : 1000
        })

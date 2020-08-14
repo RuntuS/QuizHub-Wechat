@@ -1,0 +1,60 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">讨论区</view>
+</cu-custom>
+
+<view class="disBox" wx:if="{{!loadModal}}">
+<!-- 下面是循环 -->
+  <view class="discuss" wx:for="{{commentsLists}}">
+
+    <view class="imageBox"> <!--头像暂时使用自己的头像，后期会更换-->
+      <image src="{{avaUrl}}"></image>
+    </view>
+    <!-- 图片右侧的内容 -->
+    <view class="Box-Content">
+
+      <view class="title">
+        <view class="one-flow">
+          <text class="nickName">{{item.userId}}</text>
+          <text class="id">#{{item.commentId}}</text>
+        </view>
+        <view class="second-flow">
+          <text class="Date">{{item.date}}</text>
+        </view>
+      </view>
+      <!-- title截止 -->
+      <view class="replyContent" wx:if='{{item.isReply}}'>
+        <text class="replyUser">{{item.replyUser}}: </text>
+        <text class="replyInf">{{item.replyInf}}</text>
+      </view>
+      <view class="Content">
+        <text>{{item.text}}</text>
+      </view>
+      <view class="starAndReply">
+        <view class="star">
+          <image src="/images/good.png"></image>
+        </view>
+        <view class="reply" bindtap="showKeyboard" data-reply="{{item.commentId}}">
+          <image src="/images/reply.png"></image>
+        </view>
+      </view>
+    </view>
+    <!-- 图片右侧的内容 -->
+  </view>  
+  <!-- 每一个讨论的盒子 -->
+</view>
+<view class="cu-bar search bg-white comment"  wx:if="{{!loadModal}}">
+    <view class="cu-avatar round" style="background-image:url({{avaUrl}});"></view>
+    <view class="search-form round">
+      <text class="cuIcon-comment"></text>
+      <input type="text" placeholder="评论" confirm-type="done" cursor-spacing="20" focus="{{isFocus}}" bindconfirm="inputValue"></input>
+    </view>
+</view>
+
+
+
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='https://photo-1258955954.cos.ap-chengdu.myqcloud.com/Wechat/run.gif' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>加载中</view>
+</view>

@@ -74,8 +74,6 @@ exports.main = async (event, context) => {
       result = {"status" : "failure" , "inf" : "查看目录失败"};
       ctx.body = result;
     })
-
-
   })
 
   // 多级目录请求
@@ -151,6 +149,63 @@ exports.main = async (event, context) => {
     })
     ctx.body = result.data;
   })
+
+  // 评论区
+  app.router("selectDiscuss",async(ctx) => {
+    let user = ctx._req.event.user;
+    let repName = ctx._req.event.repName;
+    let result = {}
+    await axios.get(`http://182.92.178.28:8877/repos/${user}/${repName}/comments`)
+    .then(res => {
+      result = res;
+    })
+    .catch(err => {
+      result = res;
+    })
+    ctx.body = result.data;
+  })
+
+  // 进行评论
+  app.router("sendDiscuss",async (ctx) => {
+    let user = ctx._req.event.user;
+    let repName = ctx._req.event.repName;
+    let text = ctx._req.event.text;
+    let result = {};
+    await axios({
+      method : "post",
+      url : `http://182.92.178.28:8877/repos/${user}/${repName}/comments?text=${text}`
+    })
+    .then(res => {
+      result = res;
+    })
+    .catch(err => {
+      result = err;
+    })
+    // 这里不能直接写result，否则会造成JSON序列化问题
+    ctx.body = result.data;
+  })
+
+  app.router("replyDiscuss",async (ctx) => {
+    let user = ctx._req.event.user;
+    let repName = ctx._req.event.repName;
+    let text = ctx._req.event.text;
+    let replyId = ctx._req.event.commentId;
+    let result = {};
+    await axios({
+      method : "post",
+      url : `http://182.92.178.28:8877/repos/${user}/${repName}/${replyId}/replies?text=${text}`
+    })
+    .then(res => {
+      result = res;
+    })
+    .catch(err => {
+      result = err;
+    })
+    // 这里不能直接写result，否则会造成JSON序列化问题
+    ctx.body = result.data;
+  })
+
+  
 
 
   

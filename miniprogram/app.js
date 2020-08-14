@@ -16,7 +16,7 @@ App({
     }
 
  
-    this.globalData = {};
+    this.globalData = { isAuthorized : false};
      // 导航栏设置
     wx.getSystemInfo({
       success: e => {

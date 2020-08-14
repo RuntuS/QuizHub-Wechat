@@ -32,13 +32,14 @@
  /* 左侧图片+姓名 */
 
 .head-photo-box{
-   width: 200rpx;
+   width: 250rpx;
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
    margin-left: 50rpx;
    box-sizing: border-box;
+   
  }
 
 .head-photo{ 
@@ -53,6 +54,7 @@
   line-height: 100%;
   display: inline-block;
   font-weight: 500;
+  
 }
 
 /* 自我介绍 */

@@ -306,5 +306,11 @@ Page({
     wx.navigateTo({
       url: `/pages/rep/question/question?repName=${that.data.repName}`,
     })
+  },
+  turnToDiscuss(){
+    var that = this;
+    wx.navigateTo({
+      url: `/pages/rep/discuss/discuss?repName=${that.data.repName}`,
+    })
   }
 })

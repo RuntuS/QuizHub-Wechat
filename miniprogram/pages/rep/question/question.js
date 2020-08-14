@@ -38,6 +38,10 @@ Page({
     wx.navigateTo({
       url: `/pages/rep/folders/issue/issue?id=${id}`,
     })
+  },
+  touchmove(detail){
+    console.log(detail.touches[0].clientX);
+    
   }
 
 

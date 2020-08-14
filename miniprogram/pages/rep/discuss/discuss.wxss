@@ -1,0 +1,126 @@
+/* miniprogram/pages/rep/discuss/discuss.wxss */
+
+.disBox{
+  background-color: white;
+
+  padding-bottom: 100rpx;
+}
+
+.discuss{
+  margin-bottom: 30rpx;
+  position: relative;
+  border-bottom: 1px solid rgb(200, 200, 200);
+  display: flex;
+  box-sizing: border-box;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+  background-color: white;
+}
+
+/* image */
+.imageBox{
+  width: 90rpx;
+  height: 90rpx;
+  
+}
+
+
+.imageBox > image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50rpx;
+  
+}
+
+/* image */
+.Box-Content{
+  margin-left: 40rpx;
+  flex: 2;
+
+}
+
+.Box-Content > .title{
+  height: 110rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+
+.one-flow{
+  position: relative;
+}
+
+
+.nickName{
+  display: inline-block;
+  position: absolute;
+  font-weight: 600;
+}
+
+
+.id{
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  color: rgb(210, 210, 210);
+}
+
+.second-flow{
+  position: relative;
+}
+
+.Date{
+  font-size: 26rpx;
+  color: rgb(150, 150, 150
+  );
+}
+
+.replyContent{
+  background-color: rgb(240, 240, 240);
+  border-radius: 20rpx;
+  min-height: 60rpx;
+  padding-left: 30rpx;
+  display: flex;
+  align-items: center;
+}
+
+.replyUser{
+  vertical-align: middle;
+}
+
+.replyInf{
+  vertical-align: middle;
+  color: rgb(150, 150, 150);
+}
+
+.Content{
+  margin-top: 20rpx;
+}
+
+
+.starAndReply{
+  display: flex;
+  margin-top: 30rpx;
+  align-items: center;
+}
+
+.reply{
+  margin-left: 20rpx;
+}
+
+
+.star > image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.reply > image{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.comment{
+  position: fixed;
+  bottom: 0;
+}

@@ -8,18 +8,32 @@
     <view id="head" >
     <!-- 头部信息 -->
       <view class="head-photo-box">
-        <image class="head-photo" src="{{userInf.avatarUrl}}">
+        <image class="head-photo" src="{{avatarUrl}}">
       
         </image>
-        <text class="name">
+
+
+
+        <text class="name" wx:if="{{isAuthorized}}">
           {{userInf.nickName}}
         </text>
+      <!-- 认证前 -->
+        <text  class="name" style="color:white;" wx:else>
+          点击右侧按钮登录
+        </text>
+
       </view>
       <!-- 自我介绍 -->
-     <view class="self-intro">
+     <view class="self-intro" wx:if="{{isAuthorized}}">
         <view class="intro"><image src="/images/intro.png"></image><text>干就完了,奥力给</text></view>
         <view class="url"><image src="/images/link.png"></image><text>https://laolan-runtu.xyz</text></view>
     </view>
+     <!-- 认证前 -->
+    <view class="self-intro" wx:else>
+      <button class="cu-btn round bg-gray" bindgetuserinfo="login" open-type="getUserInfo" >登录</button>
+    </view>
+    
+
   </view>
 
   <!-- 头部信息截止 -->
@@ -31,7 +45,7 @@
          <text class="fo-text">followers</text>
       </view>
       <view class="bottom">
-          <text>20</text> 
+          <text wx:if="{{isAuthorized}}">20</text> 
       </view>
       
     </view>
@@ -42,7 +56,7 @@
           <text class="fo-text">following</text>
         </view>
         <view class="bottom">
-          <text >40</text> 
+          <text wx:if="{{isAuthorized}}">40</text> 
         </view>
     </view>
 
@@ -55,7 +69,7 @@
         <view class="unread"  wx:if="{{unReadNum > 0}}"></view>
       </view>
         <view class="bottom" wx:if="{{hasUnread}}">
-          <text >{{unReadNum}}</text> 
+          <text wx:if="{{isAuthorized}}">{{unReadNum}}</text> 
         </view>
     </view>
 
@@ -68,12 +82,12 @@
     <text class="cuIcon-top" style="font-size : 25px; margin-left:30rpx;"></text>
     <text id="title">Popular</text>
   <!-- 加载动画 -->
-    <view  wx:if="{{isLoading}}" class="loading" style="position:absolute;width:100%;">
+    <view  wx:if="{{isLoading && isAuthorized}}" class="loading" style="position:absolute;width:100%;">
       <image src="https://image.weilanwl.com/gif/loading-white.gif" mode="aspectFit" class="gif-white" style="height:400rpx"></image>
     </view>
   <!-- 这个是可以横向滑动的 -->
     <view class="rep-slide">
-        <scroll-view scroll-x="true"  id="scroll" >
+        <scroll-view scroll-x="true"  id="scroll" wx:if="{{isAuthorized}}">
             <view class="rep" wx:for="{{requestResult}}"  bindtap="turnToRep" data-rep="{{item}}" >
                 <view class="headphoto-and-name">
                   <view class="headphoto-box">

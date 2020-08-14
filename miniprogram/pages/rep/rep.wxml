@@ -47,7 +47,7 @@
     </view> 
   </view>
 
-  <view wx:if="{{!loadModal}}">
+  <view wx:if="{{!loadModal}}" bindtap="turnToDiscuss">
     <view class="to-somewhere" id="issue" >
       <text>讨论</text>
       <image src="/images/issue.png" class="to-stars-icon"></image>

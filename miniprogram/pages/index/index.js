@@ -53,42 +53,52 @@ Page({
     location : "",
     userInfoAva : "",
     userInf : {},
-    loadModal : true
+    loadModal : true,
+    isAuthorized : app.globalData.isAuthorized
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+
+  },
+  onShow(){
+    this.setData({
+      isAuthorized : app.globalData.isAuthorized //刷新
+    })
     var that = this;
     this.towerSwiper('swiperList');
     this.requestRepInf(this);
-    wx.getLocation({
-      altitude: 'true',
-      success(res){
-        wx.showLoading({
-          title: '正在获取你的位置',
-        })
-        console.log(res);
-        wx.request({
-          url: `https://apis.map.qq.com/ws/geocoder/v1/?location=${res.latitude},${res.longitude}&key=YYZBZ-D2P33-VPD3O-YYY3W-7UGGJ-RFBKQ`,
-          success(res){
-            wx.hideLoading({
-              success: (res) => {
-                
-              },
-            })
-            console.log(res);
-            that.setData({
-              location : res.data.result.formatted_addresses.recommend,
-              userInfoAva : app.globalData.userInfo.avatarUrl,
-              userInf : app.globalData.userInfo
-            })
+    if(this.data.isAuthorized)
+    {
+      wx.getLocation({
+        altitude: 'true',
+        success(res){
+          wx.showLoading({
+            title: '正在获取你的位置',
+          })
+          console.log(res);
+          wx.request({
+            url: `https://apis.map.qq.com/ws/geocoder/v1/?location=${res.latitude},${res.longitude}&key=YYZBZ-D2P33-VPD3O-YYY3W-7UGGJ-RFBKQ`,
+            success(res){
+              wx.hideLoading({
+                success: (res) => {
+                  
+                },
+              })
+              console.log(res);
+              that.setData({
+                location : res.data.result.formatted_addresses.recommend,
+                userInfoAva : app.globalData.userInfo.avatarUrl,
+                userInf : app.globalData.userInfo
+              })
+            }
+           })
           }
-         })
-        }
-    })
+      })
+    }
+    
   },
   DotStyle(e) {
     this.setData({
